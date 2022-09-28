@@ -35,7 +35,8 @@ async def site_goweather(site, session):
 
 async def main():
     async with ClientSession() as session:
-        result = await asyncio.gather(site_meteo(site_1, session), site_seventimer(site_2, session), site_goweather(site_3, session))
+        result = await asyncio.gather(site_meteo(site_1, session), site_seventimer(site_2, session),
+                                      site_goweather(site_3, session))
         average_temperature = round(sum(result) / len(result), 2)
     return average_temperature
 
